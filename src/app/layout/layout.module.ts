@@ -7,6 +7,8 @@ import { SharedModule } from 'src/app/shared/modules/shared.module';
 
 /* Components */
 import { LayoutComponent } from './layout.component';
+import { HeaderComponent } from './header/header.component';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import { LayoutComponent } from './layout.component';
     SharedModule
   ],
   declarations: [
-    LayoutComponent
+    LayoutComponent,
+    HeaderComponent,
+    BodyComponent
   ]
 })
 export class LayoutComponentModule { }
