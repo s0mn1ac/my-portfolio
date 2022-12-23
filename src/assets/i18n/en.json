@@ -1,7 +1,16 @@
 {
 
-    "app": {
-        "name": "My Portfolio"
+  "app": {
+    "name": "My Portfolio"
+  },
+
+  "about": {
+    "title": "Let me introduce myself",
+    "subtitle": "About me",
+    "paragraphs": {
+      "p1": "I am an app developer, specialized in web and mobile devices. Throughout my career I have worked on projects for companies such as Atos, Talgo or Aena.",
+      "p2": "Software development, apart from my job, is my passion and that is why I never stop learning new technologies and tools to keep up with the latest news of this world."
     }
-    
+  }
+
 }

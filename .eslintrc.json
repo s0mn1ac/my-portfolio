@@ -53,7 +53,7 @@
         "*.ts"
       ],
       "extends": [
-        "plugin:@ngrx/recommended"
+//        "plugin:@ngrx/recommended"
       ],
       "rules": {
         "@ngrx/no-typed-global-store": "off"
