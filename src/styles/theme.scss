@@ -17,8 +17,13 @@
 
   --color-white: #FFFFFF;
   --color-black: #000000;
+
   --color-light: #F4F5f8;
   --color-dark: #222428;
+
+  --background-color-light: #FFFFFF;
+  --background-color-dark: #222428;
+
   --color-transparent: #FFFFFF00;
 
   --font-family: 'Poppins', sans-serif;
@@ -35,15 +40,15 @@
   --scrollbar-background-color: #C1C1C1;
   --scrollbar-background-color-hover: #7D7D7D;
 
-  body.light {
+  body {
     --text-color: var(--text-color-dark);
-    --background-color: var(--color-light);
+    --background-color: var(--background-color-light);
   }
 
   body.dark {
 
     --text-color: var(--text-color-light);
-    --background-color: var(--color-dark);
+    --background-color: var(--background-color-dark);
   }
 
 }
