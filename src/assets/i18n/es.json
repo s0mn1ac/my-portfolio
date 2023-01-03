@@ -4,6 +4,13 @@
     "name": "Mi Portfolio"
   },
 
+  "header": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "portfolio": "Portfolio",
+    "contact": "Contacto"
+  },
+
   "about": {
     "title": "Deja que me presente",
     "subtitle": "Sobre mí",

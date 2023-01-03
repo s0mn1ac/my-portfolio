@@ -1,7 +1,26 @@
 <ng-container *transloco="let t">
-    <div class="header-layout" [ngClass]="{ 'hide': !isHeaderVisible}">
-        <div class="header-layout__logo">
-            LOGO
-        </div>
+
+  <div class="header-layout" [ngClass]="{ 'hide': !isHeaderVisible}">
+
+    <div class="header-layout__logo">
+      LOGO
     </div>
+
+    <div class="header-layout__actions">
+
+      <div class="links">
+        <button class="my-button-text primary" (click)="onClickNavigateTo(sectionTypes.Home)"> {{ t('header.home') }} </button>
+        <button class="my-button-text primary" (click)="onClickNavigateTo(sectionTypes.About)"> {{ t('header.about') }} </button>
+        <button class="my-button-text primary" (click)="onClickNavigateTo(sectionTypes.Portfolio)"> {{ t('header.portfolio') }} </button>
+        <button class="my-button-text primary" (click)="onClickNavigateTo(sectionTypes.Contact)"> {{ t('header.contact') }} </button>
+      </div>
+
+      <div class="options">
+        LANGUAGE
+      </div>
+
+    </div>
+
+  </div>
+
 </ng-container>

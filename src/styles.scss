@@ -1,3 +1,4 @@
+@import './styles/buttons.scss';
 @import './styles/fonts.scss';
 @import './styles/headings.scss';
 @import './styles/paragraphs.scss';
@@ -10,6 +11,10 @@
 
 html, body {
   height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

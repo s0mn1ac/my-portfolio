@@ -1,0 +1,56 @@
+button.my-button-text {
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  height: 36px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size);
+  font-weight: 300;
+  text-align: center;
+  font-family: inherit;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  background: transparent;
+  color: var(--text-color);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  &:active {
+    color: var(--color-primary-dark);
+  }
+
+  &.primary {
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &:active {
+      color: var(--color-primary-dark);
+    }
+  }
+
+  &.secondary {
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--color-secondary);
+    }
+
+    &:active {
+      color: var(--color-secondary-dark);
+    }
+  }
+}

@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 /* Transloco */
 import { TranslocoRootModule } from 'src/app/transloco-root.module';
 
+/* Application modules */
+import { NgRxModule } from "../../shared/modules/ngrx.module";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +20,8 @@ import { TranslocoRootModule } from 'src/app/transloco-root.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    TranslocoRootModule
+    TranslocoRootModule,
+    NgRxModule
   ]
 })
 export class CoreModule { }
