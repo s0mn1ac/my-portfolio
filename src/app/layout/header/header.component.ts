@@ -31,8 +31,6 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private previousPageYOffset: number = window.pageYOffset;
 
-  private fragment: string | null = null;
-
   private timeout: number = 100;
 
   @HostListener('window:scroll', ['$event'])
@@ -88,8 +86,6 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private async onChangeNavigationSection(navigationSection: SectionTypes | null): Promise<void> {
-
-    console.log(' -> navigation section', navigationSection)
 
     if (navigationSection === null) {
       return;
