@@ -91,17 +91,12 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
 
-    this.router
+    await this.router
       .navigate([''], { fragment: navigationSection })
-      .then(() => {
-        if (navigationSection === SectionTypes.Home) {
-          window.scroll({ top: 0 });
-          this.timeout = 0;
-          return;
-        }
-        setTimeout(() => this.viewportScroller.scrollToAnchor(navigationSection), this.timeout);
-        this.timeout = 0;
-      });
+      .then(() =>
+        setTimeout(() => this.viewportScroller.scrollToAnchor(navigationSection), this.timeout));
+
+    this.timeout = 0;
   }
 
 
