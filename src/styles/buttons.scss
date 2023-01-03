@@ -1,9 +1,11 @@
 button.my-button-text {
   -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  position: relative;
   border: none;
   text-decoration: none;
   white-space: nowrap;
-  border-radius: 1rem;
+  border-radius: 10px;
   padding: 0 1rem;
   height: 36px;
   display: inline-flex;
@@ -16,7 +18,6 @@ button.my-button-text {
   font-family: inherit;
   transition: color 0.2s ease-in-out;
   cursor: pointer;
-  -webkit-user-select: none;
   user-select: none;
   box-sizing: border-box;
   background: transparent;
@@ -30,6 +31,21 @@ button.my-button-text {
     color: var(--color-primary-dark);
   }
 
+  &.selectable::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &.selectable.selected::after {
+    background: var(--color-primary);
+    width: 100%;
+  }
+
   &.primary {
     color: var(--text-color);
 
@@ -39,6 +55,11 @@ button.my-button-text {
 
     &:active {
       color: var(--color-primary-dark);
+    }
+
+    &.selectable.selected::after {
+      background: var(--color-primary);
+      width: 100%;
     }
   }
 
@@ -51,6 +72,11 @@ button.my-button-text {
 
     &:active {
       color: var(--color-secondary-dark);
+    }
+
+    &.selectable.selected::after {
+      background: var(--color-secondary);
+      width: 100%;
     }
   }
 }

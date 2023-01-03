@@ -21,13 +21,15 @@ import { SectionTypes } from "../../shared/enums/section-types.enum";
 })
 export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  readonly navigationSection: Observable<SectionTypes | null> = this.store.select(selectNavigationSection);
+  readonly navigationSection$: Observable<SectionTypes | null> = this.store.select(selectNavigationSection);
 
   readonly destroy$: Subject<boolean> = new Subject<boolean>();
 
   public _isHeaderVisible: boolean = true;
 
   public sectionTypes: typeof SectionTypes = SectionTypes;
+
+  public navigationSection!: SectionTypes | null;
 
   private previousPageYOffset: number = window.pageYOffset;
 
@@ -79,7 +81,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private initStoreSubscriptions(): void {
-    this.navigationSection
+    this.navigationSection$
       .pipe(takeUntil(this.destroy$))
       .subscribe((navigationSection: SectionTypes | null) =>
         this.onChangeNavigationSection(navigationSection));
@@ -93,10 +95,11 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
     await this.router
       .navigate([''], { fragment: navigationSection })
-      .then(() =>
-        setTimeout(() => this.viewportScroller.scrollToAnchor(navigationSection), this.timeout));
-
-    this.timeout = 0;
+      .then(() => setTimeout(() => this.viewportScroller.scrollToAnchor(navigationSection), this.timeout))
+      .finally(() => {
+        this.timeout = 0;
+        this.navigationSection = navigationSection;
+      });
   }
 
 
