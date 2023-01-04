@@ -5,7 +5,8 @@
   },
 
   "imageAlts": {
-    "profilePicture": "Profile picture"
+    "profilePicture": "Profile picture",
+    "developerAtWork": "Developer at work"
   },
 
   "header": {

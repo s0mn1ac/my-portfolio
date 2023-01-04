@@ -1,6 +1,5 @@
 <ng-container *transloco="let t">
 
-<!--  <h4 class="subtitle"> {{ t('home.subtitle') }} </h4>-->
   <div class="title">
     <h2> {{ t('home.title.t1') }} </h2>
     <img src="assets/images/profile/profile.jpg" [alt]="t('imageAlts.profilePicture')" class="profile" />
@@ -10,6 +9,6 @@
 
   <app-type-delete [wordArray]="wordArray"></app-type-delete>
 
-  <img src="https://placehold.co/600x400" alt="placeholder" class="home-main-image" />
+  <img src="assets/images/sections/home/developer-at-work.webp" [alt]="t('imageAlts.developerAtWork')" class="home-main-image" />
 
 </ng-container>
