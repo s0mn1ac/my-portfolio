@@ -16,6 +16,11 @@ div.header-layout {
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 100%;
+
+    img.logo {
+      height: 100%;
+    }
   }
 
   div.header-layout__actions {
