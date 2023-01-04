@@ -18,6 +18,22 @@
       "p1": "I am an app developer, specialized in web and mobile devices. Throughout my career I have worked on projects for companies such as Atos, Talgo or Aena.",
       "p2": "Software development, apart from my job, is my passion and that is why I never stop learning new technologies and tools to keep up with the latest news of this world."
     }
+  },
+
+  "portfolio": {
+    "title": "Check my projects!",
+    "subtitle": "Portfolio",
+    "paragraphs": {
+      "p1": "Oops... There's no content on this section yet. I need more time!"
+    }
+  },
+
+  "contact": {
+    "title": "Got any questions?",
+    "subtitle": "Contact",
+    "paragraphs": {
+      "p1": "You can contact me through my email:"
+    }
   }
 
 }

@@ -18,6 +18,22 @@
       "p1": "Soy desarrollador de aplicaciones, especializado en web y dispositivos móviles. A lo largo de mi carrera he trabajado en proyectos de empresas como Atos, Talgo o Aena.",
       "p2": "El desarrollo de software, aparte de mi trabajo es mi pasión y por eso nunca paro de aprender nuevas tecnologías y herramientas para mantenerme al día con las últimas novedades del sector."
     }
+  },
+
+  "portfolio": {
+    "title": "Echa un vistazo a mis proyectos",
+    "subtitle": "Portfolio",
+    "paragraphs": {
+      "p1": "Oops... aún no he añadido contenido a esta sección. ¡Necesito un poco más de tiempo!"
+    }
+  },
+
+  "contact": {
+    "title": "¿Tienes alguna duda?",
+    "subtitle": "Contacto",
+    "paragraphs": {
+      "p1": "Puedes ponerte en contacto conmigo a través de mi correo electrónico:"
+    }
   }
 
 }

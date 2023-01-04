@@ -8,11 +8,17 @@ import { TranslocoModule } from '@ngneat/transloco';
 
 /* Application modules */
 import { PipesModule } from './pipes.module';
+
+/* Components */
 import { AboutComponent } from "../components/about/about.component";
+import { ContactComponent } from "../components/contact/contact.component";
+import { PortfolioComponent } from "../components/portfolio/portfolio.component";
 
 @NgModule({
   declarations: [
-    AboutComponent
+    AboutComponent,
+    ContactComponent,
+    PortfolioComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +33,9 @@ import { AboutComponent } from "../components/about/about.component";
     FormsModule,
     ReactiveFormsModule,
     PipesModule,
-    AboutComponent
+    AboutComponent,
+    ContactComponent,
+    PortfolioComponent
   ]
 })
 export class SharedModule { }
