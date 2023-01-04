@@ -4,11 +4,26 @@
     "name": "My Portfolio"
   },
 
+  "imageAlts": {
+    "profilePicture": "Profile picture"
+  },
+
   "header": {
     "home": "Home",
     "about": "About me",
     "portfolio": "Portfolio",
     "contact": "Contact"
+  },
+
+  "home": {
+    "title": {
+      "t1": "Hi!",
+      "t2": "I'm Juanmi González"
+    },
+    "subtitle": "Hi!",
+    "phrases": {
+      "p1": "Web developer"
+    }
   },
 
   "about": {

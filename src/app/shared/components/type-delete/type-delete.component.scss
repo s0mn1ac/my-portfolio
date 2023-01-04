@@ -1,0 +1,15 @@
+span.blink {
+  border-right-style: solid;
+  animation: blink 1s infinite;
+}
+
+span.text {
+  font-weight: normal;
+}
+
+@keyframes blink {
+
+  to {
+    opacity: 0;
+  }
+}

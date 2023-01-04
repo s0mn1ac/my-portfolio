@@ -4,6 +4,10 @@
     "name": "Mi Portfolio"
   },
 
+  "imageAlts": {
+    "profilePicture": "Foto de perfil"
+  },
+
   "header": {
     "home": "Inicio",
     "about": "Sobre mí",
@@ -11,12 +15,23 @@
     "contact": "Contacto"
   },
 
+  "home": {
+    "title": {
+      "t1": "¡Hola!",
+      "t2": "Soy Juanmi González"
+    },
+    "subtitle": "¡Hola!",
+    "phrases": {
+      "p1": "Desarrollador web"
+    }
+  },
+
   "about": {
     "title": "Deja que me presente",
     "subtitle": "Sobre mí",
     "paragraphs": {
       "p1": "Soy desarrollador de aplicaciones, especializado en web y dispositivos móviles. A lo largo de mi carrera he trabajado en proyectos de empresas como Atos, Talgo o Aena.",
-      "p2": "El desarrollo de software, aparte de mi trabajo es mi pasión y por eso nunca paro de aprender nuevas tecnologías y herramientas para mantenerme al día con las últimas novedades del sector."
+      "p2": "El desarrollo de software, aparte de mi trabajo, es mi pasión y por eso nunca paro de aprender nuevas tecnologías y herramientas para mantenerme al día con las últimas novedades del sector."
     }
   },
 

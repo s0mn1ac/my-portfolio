@@ -12,13 +12,17 @@ import { PipesModule } from './pipes.module';
 /* Components */
 import { AboutComponent } from "../components/about/about.component";
 import { ContactComponent } from "../components/contact/contact.component";
+import { HomeComponent } from "../components/home/home.component";
 import { PortfolioComponent } from "../components/portfolio/portfolio.component";
+import { TypeDeleteComponent } from "../components/type-delete/type-delete.component";
 
 @NgModule({
   declarations: [
     AboutComponent,
     ContactComponent,
-    PortfolioComponent
+    HomeComponent,
+    PortfolioComponent,
+    TypeDeleteComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +39,9 @@ import { PortfolioComponent } from "../components/portfolio/portfolio.component"
     PipesModule,
     AboutComponent,
     ContactComponent,
-    PortfolioComponent
+    HomeComponent,
+    PortfolioComponent,
+    TypeDeleteComponent
   ]
 })
 export class SharedModule { }
