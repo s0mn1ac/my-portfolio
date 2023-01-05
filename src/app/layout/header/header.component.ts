@@ -12,7 +12,9 @@ import { navigateTo } from "../../core/state/navigation/navigation.actions";
 import { selectNavigationSection } from "../../core/state/navigation/navigation.selectors";
 
 /* Enums */
-import { SectionTypes } from "../../shared/enums/section-types.enum";
+import { SectionEnum } from "../../shared/enums/section.enum";
+import { LanguageEnum } from "../../shared/enums/language.enum";
+import { TranslocoService } from "@ngneat/transloco";
 
 @Component({
   selector: 'app-header',
@@ -21,15 +23,16 @@ import { SectionTypes } from "../../shared/enums/section-types.enum";
 })
 export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  readonly navigationSection$: Observable<SectionTypes | null> = this.store.select(selectNavigationSection);
+  readonly navigationSection$: Observable<SectionEnum | null> = this.store.select(selectNavigationSection);
 
   readonly destroy$: Subject<boolean> = new Subject<boolean>();
 
   public _isHeaderVisible: boolean = true;
 
-  public sectionTypes: typeof SectionTypes = SectionTypes;
+  public sectionTypes: typeof SectionEnum = SectionEnum;
+  public languageTypes: typeof LanguageEnum = LanguageEnum;
 
-  public navigationSection!: SectionTypes | null;
+  public navigationSection!: SectionEnum | null;
 
   private previousPageYOffset: number = window.pageYOffset;
 
@@ -45,7 +48,8 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private store: Store,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    private translocoService: TranslocoService
   ) { }
 
   ngOnInit(): void {
@@ -69,25 +73,29 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     this._isHeaderVisible = isHeaderVisible;
   }
 
-  public onClickNavigateTo(section: SectionTypes): void {
+  public onClickNavigateTo(section: SectionEnum): void {
     this.dispatchNavigateTo(section);
+  }
+
+  public onClickChangeLanguage(language: LanguageEnum): void {
+    this.translocoService.setActiveLang(language);
   }
 
   private initUrlFragmentSubscription(): void {
     this.activatedRoute.fragment
       .pipe(first())
       .subscribe((fragment: string | null) =>
-        this.dispatchNavigateTo(fragment as SectionTypes ?? SectionTypes.Home));
+        this.dispatchNavigateTo(fragment as SectionEnum ?? SectionEnum.Home));
   }
 
   private initStoreSubscriptions(): void {
     this.navigationSection$
       .pipe(takeUntil(this.destroy$))
-      .subscribe((navigationSection: SectionTypes | null) =>
+      .subscribe((navigationSection: SectionEnum | null) =>
         this.onChangeNavigationSection(navigationSection));
   }
 
-  private async onChangeNavigationSection(navigationSection: SectionTypes | null): Promise<void> {
+  private async onChangeNavigationSection(navigationSection: SectionEnum | null): Promise<void> {
 
     if (navigationSection === null) {
       return;
@@ -105,7 +113,7 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   /* ----- Store Dispatchers ------------------------------------------------------------------------------------------------------------ */
 
-  private dispatchNavigateTo(section: SectionTypes): void {
+  private dispatchNavigateTo(section: SectionEnum): void {
     this.store.dispatch(navigateTo({ section }));
   }
 

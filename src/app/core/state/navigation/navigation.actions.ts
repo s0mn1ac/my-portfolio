@@ -2,7 +2,7 @@
 import { createAction, props } from '@ngrx/store';
 
 /* Enums */
-import { SectionTypes } from "../../../shared/enums/section-types.enum";
+import { SectionEnum } from "../../../shared/enums/section.enum";
 
 export enum NavigationTypes {
   NavigateTo = '[Navigation] Navigate To...'
@@ -10,5 +10,5 @@ export enum NavigationTypes {
 
 export const navigateTo = createAction(
   NavigationTypes.NavigateTo,
-  props<{ section: SectionTypes }>()
+  props<{ section: SectionEnum }>()
 );

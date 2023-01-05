@@ -7,8 +7,12 @@
 
   <h2> {{ t('home.title.t2') }} </h2>
 
-  <app-type-delete [wordArray]="wordArray"></app-type-delete>
+  <app-type-delete #typeDeleteComponent [wordArray]="wordArray"> </app-type-delete>
 
-  <img src="assets/images/sections/home/developer-at-work.webp" [alt]="t('imageAlts.developerAtWork')" class="home-main-image" />
+  <div class="home-main-image-container">
+    <img src="assets/images/sections/home/developer-at-work.webp" [alt]="t('imageAlts.developerAtWork')" class="home-main-image" />
+     <div class="circle circle-1"> </div>
+     <div class="circle circle-2"> </div>
+  </div>
 
 </ng-container>

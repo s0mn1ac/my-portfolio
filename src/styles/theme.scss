@@ -31,6 +31,9 @@
   --background-color-light: #FFFFFF;
   --background-color-dark: #222428;
 
+  --background-color-light-reverse: #222428;
+  --background-color-dark-reverse: #FFFFFF;
+
   --color-transparent: #FFFFFF00;
 
   --font-family: 'Poppins', sans-serif;
@@ -38,6 +41,9 @@
 
   --text-color-dark: #262626;
   --text-color-light: #FFFFFF;
+
+  --text-color-dark-reverse: #FFFFFF;
+  --text-color-light-reverse: #262626;
 
   --box-shadow-low: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   --box-shadow-medium: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -49,13 +55,17 @@
 
   body {
     --text-color: var(--text-color-dark);
+    --text-color-reverse: var(--text-color-dark-reverse);
     --background-color: var(--background-color-light);
+    --background-color-reverse: var(--background-color-light-reverse);
   }
 
   body.dark {
 
     --text-color: var(--text-color-light);
+    --text-color-reverse: var(--text-color-light-reverse);
     --background-color: var(--background-color-dark);
+    --background-color-reverse: var(--background-color-dark-reverse);
   }
 
 }
