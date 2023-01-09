@@ -1,4 +1,4 @@
-button.my-button-text {
+a, button {
   -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
   position: relative;
@@ -16,10 +16,49 @@ button.my-button-text {
   font-weight: 300;
   text-align: center;
   font-family: inherit;
-  transition: color 0.2s ease-in-out;
   cursor: pointer;
   user-select: none;
   box-sizing: border-box;
+}
+
+a.my-button, button.my-button {
+  transition: background 0.2s ease-in-out;
+  background: var(--color-primary);
+  color: var(--text-color-light);
+
+  &:hover {
+    background: var(--color-primary-dark);
+  }
+
+  &:active {
+    background: var(--color-primary-darker);
+  }
+
+  &.primary {
+
+    &:hover {
+      background: var(--color-primary-dark);
+    }
+
+    &:active {
+      background: var(--color-primary-darker);
+    }
+  }
+
+  &.secondary {
+
+    &:hover {
+      background: var(--color-secondary-dark);
+    }
+
+    &:active {
+      background: var(--color-secondary-darker);
+    }
+  }
+}
+
+a.my-button-text, button.my-button-text {
+  transition: color 0.2s ease-in-out;
   background: transparent;
   color: var(--text-color);
 

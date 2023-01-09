@@ -1,7 +1,8 @@
 {
 
   "app": {
-    "name": "Mi Portfolio"
+    "name": "Mi Portfolio",
+    "email": "juanmi.gonzalezm@gmail.com"
   },
 
   "imageAlts": {
