@@ -1,18 +1,18 @@
 <ng-container *transloco="let t">
 
-  <div class="title">
+  <div class="title fade-in-top animation-delay-03">
     <h2> {{ t('home.title.t1') }} </h2>
     <img src="assets/images/profile/profile.jpg" [alt]="t('imageAlts.profilePicture')" class="profile" />
   </div>
 
-  <h2> {{ t('home.title.t2') }} </h2>
+  <h2 class="fade-in-top animation-delay-06"> {{ t('home.title.t2') }} </h2>
 
   <app-type-delete #typeDeleteComponent [wordArray]="wordArray"> </app-type-delete>
 
-  <div class="home-main-image-container">
-    <img src="assets/images/sections/home/developer-at-work.webp" [alt]="t('imageAlts.developerAtWork')" class="home-main-image" />
-     <div class="circle circle-1"> </div>
-     <div class="circle circle-2"> </div>
+  <div class="home-main-image-container fade-in-bottom animation-delay-09">
+    <img src="assets/images/sections/home/developer-at-work.webp" [alt]="t('imageAlts.developerAtWork')" class="home-main-image pulsate-fwd animation-delay-2" />
+    <div class="circle circle-1"> </div>
+    <div class="circle circle-2"> </div>
   </div>
 
 </ng-container>
