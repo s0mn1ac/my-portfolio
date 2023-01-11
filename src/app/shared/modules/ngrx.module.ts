@@ -5,10 +5,11 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { NavigationModule } from "../../core/state/navigation/navigation.module";
+import { ThemeModule } from "../../core/state/theme/theme.module";
 
 /* Environment */
 import { environment } from "../../../environments/environment";
-import { NavigationModule } from "../../core/state/navigation/navigation.module";
 
 @NgModule({
   declarations: [],
@@ -20,7 +21,8 @@ import { NavigationModule } from "../../core/state/navigation/navigation.module"
       logOnly: environment.production,
       maxAge: 25
     }),
-    NavigationModule
+    NavigationModule,
+    ThemeModule
   ]
 })
 export class NgRxModule { }

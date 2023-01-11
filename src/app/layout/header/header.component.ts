@@ -11,10 +11,14 @@ import { Store } from "@ngrx/store";
 import { navigateTo } from "../../core/state/navigation/navigation.actions";
 import { selectNavigationSection } from "../../core/state/navigation/navigation.selectors";
 
-/* Enums */
-import { SectionEnum } from "../../shared/enums/section.enum";
-import { LanguageEnum } from "../../shared/enums/language.enum";
+/* Services */
 import { TranslocoService } from "@ngneat/transloco";
+
+/* Enums */
+import { LanguageEnum } from "../../shared/enums/language.enum";
+import { SectionEnum } from "../../shared/enums/section.enum";
+import { ThemeEnum } from "../../shared/enums/theme.enum";
+import { changeTheme } from "../../core/state/theme/theme.actions";
 
 @Component({
   selector: 'app-header',
@@ -29,8 +33,9 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public _isHeaderVisible: boolean = true;
 
-  public sectionTypes: typeof SectionEnum = SectionEnum;
-  public languageTypes: typeof LanguageEnum = LanguageEnum;
+  public languageEnum: typeof LanguageEnum = LanguageEnum;
+  public sectionEnum: typeof SectionEnum = SectionEnum;
+  public themeEnum: typeof ThemeEnum = ThemeEnum;
 
   public navigationSection!: SectionEnum | null;
 
@@ -77,6 +82,10 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
     this.dispatchNavigateTo(section);
   }
 
+  public onClickChangeTheme(theme: ThemeEnum): void {
+    this.dispatchChangeTheme(theme);
+  }
+
   public onClickChangeLanguage(language: LanguageEnum): void {
     this.translocoService.setActiveLang(language);
   }
@@ -115,6 +124,10 @@ export class HeaderComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private dispatchNavigateTo(section: SectionEnum): void {
     this.store.dispatch(navigateTo({ section }));
+  }
+
+  private dispatchChangeTheme(theme: ThemeEnum): void {
+    this.store.dispatch(changeTheme({ theme }));
   }
 
 }

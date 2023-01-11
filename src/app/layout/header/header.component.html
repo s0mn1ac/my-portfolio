@@ -11,37 +11,41 @@
       <div class="links">
         <button
           class="my-button-text primary selectable"
-          [ngClass]="{ 'selected': navigationSection === sectionTypes.Home }"
-          (click)="onClickNavigateTo(sectionTypes.Home)">
+          [ngClass]="{ 'selected': navigationSection === sectionEnum.Home }"
+          (click)="onClickNavigateTo(sectionEnum.Home)">
             {{ t('header.home') }}
         </button>
         <button
           class="my-button-text primary selectable"
-          [ngClass]="{ 'selected': navigationSection === sectionTypes.About }"
-          (click)="onClickNavigateTo(sectionTypes.About)">
+          [ngClass]="{ 'selected': navigationSection === sectionEnum.About }"
+          (click)="onClickNavigateTo(sectionEnum.About)">
             {{ t('header.about') }}
         </button>
         <button
           class="my-button-text primary selectable"
-          [ngClass]="{ 'selected': navigationSection === sectionTypes.Portfolio }"
-          (click)="onClickNavigateTo(sectionTypes.Portfolio)">
+          [ngClass]="{ 'selected': navigationSection === sectionEnum.Portfolio }"
+          (click)="onClickNavigateTo(sectionEnum.Portfolio)">
             {{ t('header.portfolio') }}
         </button>
         <button
           class="my-button-text primary selectable"
-          [ngClass]="{ 'selected': navigationSection === sectionTypes.Contact }"
-          (click)="onClickNavigateTo(sectionTypes.Contact)">
+          [ngClass]="{ 'selected': navigationSection === sectionEnum.Contact }"
+          (click)="onClickNavigateTo(sectionEnum.Contact)">
             {{ t('header.contact') }}
         </button>
       </div>
 
       <div class="options">
 
-        <div class="language en" (click)="onClickChangeLanguage(languageTypes.En)">
+        <div class="theme" (click)="onClickChangeTheme(themeEnum.Dark)">
+          D
+        </div>
+
+        <div class="language en" (click)="onClickChangeLanguage(languageEnum.En)">
           EN
         </div>
 
-        <div class="language es" (click)="onClickChangeLanguage(languageTypes.Es)">
+        <div class="language es" (click)="onClickChangeLanguage(languageEnum.Es)">
           ES
         </div>
 
