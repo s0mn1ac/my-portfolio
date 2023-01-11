@@ -7,4 +7,4 @@ export const selectNavigationState = createFeatureSelector<INavigationState>(nav
 export const selectNavigationSection = createSelector(
   selectNavigationState,
   (state: INavigationState) => state.section
-)
+);

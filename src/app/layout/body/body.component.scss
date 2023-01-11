@@ -6,5 +6,9 @@ div.body-layout {
 
   section.body-layout__section {
     text-align: center;
+
+    &#footer {
+      margin-top: 3rem;
+    }
   }
 }

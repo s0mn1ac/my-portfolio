@@ -12,7 +12,9 @@ import { PipesModule } from './pipes.module';
 /* Components */
 import { AboutComponent } from "../components/about/about.component";
 import { ContactComponent } from "../components/contact/contact.component";
+import { FooterComponent } from "../components/footer/footer.component";
 import { HomeComponent } from "../components/home/home.component";
+import { MyDividerComponent } from "../components/my-divider/my-divider.component";
 import { PortfolioComponent } from "../components/portfolio/portfolio.component";
 import { TypeDeleteComponent } from "../components/type-delete/type-delete.component";
 
@@ -20,7 +22,9 @@ import { TypeDeleteComponent } from "../components/type-delete/type-delete.compo
   declarations: [
     AboutComponent,
     ContactComponent,
+    FooterComponent,
     HomeComponent,
+    MyDividerComponent,
     PortfolioComponent,
     TypeDeleteComponent
   ],
@@ -39,7 +43,9 @@ import { TypeDeleteComponent } from "../components/type-delete/type-delete.compo
     PipesModule,
     AboutComponent,
     ContactComponent,
+    FooterComponent,
     HomeComponent,
+    MyDividerComponent,
     PortfolioComponent,
     TypeDeleteComponent
   ]

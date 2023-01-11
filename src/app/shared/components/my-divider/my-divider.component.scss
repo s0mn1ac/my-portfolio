@@ -1,0 +1,25 @@
+:host {
+  width: 100%;
+
+  div.my-divider {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0 1rem;
+
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      border-top: 1px var(--color-tertiary-lighter);
+      border-top-style: solid;
+    }
+  }
+}
