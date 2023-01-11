@@ -1,1 +1,66 @@
+@import 'src/styles/mixins.scss';
 
+div.links-container, div.social-container, div.thanks-container, div.tenerife-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+div.links-container {
+  margin-top: 3rem;
+
+  button {
+    font-size: 25px;
+  }
+
+  @include responsive(tablet) {
+
+    button {
+      font-size: 20px;
+    }
+  }
+
+  @include responsive(smartphone) {
+    flex-direction: column;
+  }
+}
+
+div.social-container {
+  font-size: 2.5rem;
+  margin: 3rem 0;
+
+  em {
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}
+
+div.thanks-container {
+  letter-spacing: 1px;
+  flex-wrap: wrap;
+  line-height: 25px;
+
+  em {
+    margin: 0 0.3rem;
+    color: var(--color-danger);
+  }
+
+  div.tenerife-container {
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+
+    span.middle {
+      color: var(--color-info);
+    }
+
+    span.end {
+      color: var(--color-warning);
+    }
+  }
+}

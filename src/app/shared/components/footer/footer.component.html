@@ -2,4 +2,45 @@
 
   <app-my-divider> </app-my-divider>
 
+  <div class="links-container">
+    <button
+      class="my-button-text primary"
+      (click)="onClickNavigateTo(sectionTypes.Home)">
+      {{ t('header.home') | uppercase }}
+    </button>
+    <button
+      class="my-button-text primary"
+      (click)="onClickNavigateTo(sectionTypes.About)">
+      {{ t('header.about') | uppercase }}
+    </button>
+    <button
+      class="my-button-text primary"
+      (click)="onClickNavigateTo(sectionTypes.Portfolio)">
+      {{ t('header.portfolio') | uppercase }}
+    </button>
+    <button
+      class="my-button-text primary"
+      (click)="onClickNavigateTo(sectionTypes.Contact)">
+      {{ t('header.contact') | uppercase }}
+    </button>
+  </div>
+
+  <div class="social-container">
+    <em class="fab fa-github" (click)="navigateByUrl('https://github.com/s0mn1ac')"></em>
+    <em class="fab fa-linkedin" (click)="navigateByUrl('https://www.linkedin.com/in/juanmigonzalezm/')"></em>
+  </div>
+
+  <div class="thanks-container">
+    <span> {{ t('footer.paragraphs.p1') }} </span>
+    <em class="fas fa-heart"></em>
+    <span> {{ t('footer.paragraphs.p2') }} </span>
+    <span style="margin-left: 0.3rem;"> {{ t('footer.paragraphs.p3') }} </span>
+    <div class="tenerife-container">
+      <span class="start"> Te </span>
+      <span class="middle"> ner </span>
+      <span class="end"> ife </span>
+    </div>
+    <span> {{ t('footer.paragraphs.p4') }} </span>
+  </div>
+
 </ng-container>

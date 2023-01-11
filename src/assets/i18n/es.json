@@ -52,6 +52,19 @@
     "paragraphs": {
       "p1": "Puedes ponerte en contacto conmigo a través de mi correo electrónico:"
     }
+  },
+
+  "footer": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "portfolio": "Portfolio",
+    "contact": "Contacto",
+    "paragraphs": {
+      "p1": "Hecho con",
+      "p2": "por Juanmi González.",
+      "p3": "Desde un pequeño pueblito de",
+      "p4": "para el mundo."
+    }
   }
 
 }

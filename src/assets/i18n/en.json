@@ -52,6 +52,19 @@
     "paragraphs": {
       "p1": "You can contact me through my email:"
     }
+  },
+
+  "footer": {
+    "home": "Home",
+    "about": "About me",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "paragraphs": {
+      "p1": "Made with",
+      "p2": "by Juanmi González.",
+      "p3": "From a little town in",
+      "p4": "to the world."
+    }
   }
 
 }
