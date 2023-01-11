@@ -1,6 +1,10 @@
-@import 'colors/indigo';
-@import 'colors/slate';
 @import 'colors/amber';
+@import 'colors/blue';
+@import 'colors/green';
+@import 'colors/indigo';
+@import 'colors/red';
+@import 'colors/slate';
+@import 'colors/yellow';
 
 :root {
 
@@ -22,6 +26,30 @@
   --color-tertiary-dark: var(--color-slate-600);
   --color-tertiary-darker: var(--color-slate-700);
 
+  --color-info-lighter: var(--color-blue-300);
+  --color-info-light: var(--color-blue-400);
+  --color-info: var(--color-blue-500);
+  --color-info-dark: var(--color-blue-600);
+  --color-info-darker: var(--color-blue-700);
+
+  --color-success-lighter: var(--color-green-300);
+  --color-success-light: var(--color-green-400);
+  --color-success: var(--color-green-500);
+  --color-success-dark: var(--color-green-600);
+  --color-success-darker: var(--color-green-700);
+
+  --color-warning-lighter: var(--color-yellow-300);
+  --color-warning-light: var(--color-yellow-400);
+  --color-warning: var(--color-yellow-500);
+  --color-warning-dark: var(--color-yellow-600);
+  --color-warning-darker: var(--color-yellow-700);
+
+  --color-danger-lighter: var(--color-red-300);
+  --color-danger-light: var(--color-red-400);
+  --color-danger: var(--color-red-500);
+  --color-danger-dark: var(--color-red-600);
+  --color-danger-darker: var(--color-red-700);
+
   --color-white: #FFFFFF;
   --color-black: #000000;
 
@@ -38,6 +66,7 @@
 
   --font-family: 'Poppins', sans-serif;
   --font-size: 16px;
+  --font-weight: 300;
 
   --text-color-dark: #262626;
   --text-color-light: #FFFFFF;
