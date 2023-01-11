@@ -1,4 +1,39 @@
 section {
   width: 100%;
   max-width: 1024px;
+
+  div.main-image-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+
+    img.main-image {
+      max-width: 100%;
+    }
+
+    div.circle {
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      z-index: -1;
+
+      &.circle-1 {
+        top: 3rem;
+        left: 3rem;
+        background: #ECEFFD;
+        border-radius: 70% 50% 50% 70% / 50% 50% 70% 70%;
+      }
+
+      &.circle-2 {
+        bottom: 3rem;
+        right: 3rem;
+        background: #ECEFFD;
+        border-radius: 80% 30% 70% 50% / 50%;
+      }
+    }
+  }
 }
