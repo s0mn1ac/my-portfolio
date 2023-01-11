@@ -6,7 +6,7 @@ a, button {
   text-decoration: none;
   white-space: nowrap;
   border-radius: 10px;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   height: 38px;
   display: inline-flex;
   flex-direction: row;
@@ -32,6 +32,10 @@ a.my-button, button.my-button {
 
   &:active {
     background: var(--color-primary-darker);
+  }
+
+  &.round {
+    border-radius: 19px;
   }
 
   &.primary {
