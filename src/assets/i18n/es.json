@@ -6,9 +6,10 @@
   },
 
   "imageAlts": {
-    "profilePicture": "Foto de perfil",
     "brainstorming": "Lluvia de ideas",
     "developerAtWork": "Desarrollador trabajando",
+    "presentation": "Presentación",
+    "profilePicture": "Foto de perfil",
     "sendingEmail": "Enviando email"
   },
 
