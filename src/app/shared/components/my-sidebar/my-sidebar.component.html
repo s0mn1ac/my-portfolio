@@ -1,0 +1,25 @@
+<ng-container>
+
+  <div class="my-sidebar" [ngClass]="{ 'visible': isVisible }">
+
+    <div class="my-sidebar__header">
+
+      <div class="close-button">
+        <button
+          class="my-button-icon-only primary"
+          (click)="toggle(false)">
+          <em class="fas fa-times"> </em>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="my-sidebar__body">
+      <ng-content> </ng-content>
+    </div>
+
+  </div>
+
+  <div class="my-sidebar-overlay" [ngClass]="{ 'visible': isVisible }" (click)="toggle(false)"> </div>
+
+</ng-container>

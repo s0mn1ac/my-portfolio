@@ -1,10 +1,11 @@
+@import 'src/styles/mixins.scss';
+
 div.header-layout {
   position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 4rem;
   width: 100%;
   height: 3.5rem;
   background-color: var(--background-color);
@@ -12,14 +13,15 @@ div.header-layout {
   padding: 0 2rem;
   z-index: 1;
 
-  div.header-layout__logo {
-    display: flex;
+  div.header-layout__menu {
+    display: none;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     height: 100%;
 
-    img.logo {
-      height: 100%;
+    @include responsive(tablet) {
+      display: flex;
     }
   }
 
@@ -29,13 +31,20 @@ div.header-layout {
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
-    gap: 4rem;
+
+    @include responsive(tablet) {
+      justify-content: flex-end;
+    }
 
     div.links {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 2rem;
+
+      @include responsive(tablet) {
+        display: none;
+      }
     }
 
     div.options {

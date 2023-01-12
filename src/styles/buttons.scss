@@ -89,6 +89,10 @@ a.my-button-text, button.my-button-text {
     width: 100%;
   }
 
+  &.selectable.selected-text-only {
+    color: var(--color-primary);
+  }
+
   &.primary {
     color: var(--text-color);
 
@@ -104,6 +108,10 @@ a.my-button-text, button.my-button-text {
       background: var(--color-primary);
       width: 100%;
     }
+
+    &.selectable.selected-text-only {
+      color: var(--color-primary);
+    }
   }
 
   &.secondary {
@@ -117,8 +125,32 @@ a.my-button-text, button.my-button-text {
       color: var(--color-secondary-dark);
     }
 
+    &.selectable.selected-text-only {
+      color: var(--color-secondary);
+    }
+  }
+}
+
+a.my-button-icon-only, button.my-button-icon-only {
+  padding: 0;
+  width: 38px;
+  border-radius: 19px;
+  background: transparent;
+  transition: color 0.2s ease-in-out;
+
+  &.primary {
+    color: var(--text-color);
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &:active {
+      color: var(--color-primary-dark);
+    }
+
     &.selectable.selected::after {
-      background: var(--color-secondary);
+      background: var(--color-primary);
       width: 100%;
     }
   }

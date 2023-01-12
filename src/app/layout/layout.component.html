@@ -1,2 +1,42 @@
-<app-header></app-header>
+<app-header #header
+  [navigationSection]="navigationSection"
+  (navigateTo)="onClickNavigateTo($event)"
+  (changeTheme)="onClickChangeTheme($event)"
+  (changeLanguage)="onClickChangeLanguage($event)"
+  (toggleSidebar)="onToggleSidebar($event)">
+</app-header>
+
+<app-my-sidebar #mySidebarComponent>
+  <ng-container *transloco="let t">
+    <button
+      [style.font-size]="'20px'"
+      class="my-button-text primary selectable"
+      [ngClass]="{ 'selected-text-only': navigationSection === sectionEnum.Home }"
+      (click)="header.onClickNavigateTo(sectionEnum.Home)">
+      {{ t('header.home') | uppercase }}
+    </button>
+    <button
+      [style.font-size]="'20px'"
+      class="my-button-text primary selectable"
+      [ngClass]="{ 'selected-text-only': navigationSection === sectionEnum.About }"
+      (click)="header.onClickNavigateTo(sectionEnum.About)">
+      {{ t('header.about') | uppercase }}
+    </button>
+    <button
+      [style.font-size]="'20px'"
+      class="my-button-text primary selectable"
+      [ngClass]="{ 'selected-text-only': navigationSection === sectionEnum.Portfolio }"
+      (click)="header.onClickNavigateTo(sectionEnum.Portfolio)">
+      {{ t('header.portfolio') | uppercase }}
+    </button>
+    <button
+      [style.font-size]="'20px'"
+      class="my-button-text primary selectable"
+      [ngClass]="{ 'selected-text-only': navigationSection === sectionEnum.Contact }"
+      (click)="header.onClickNavigateTo(sectionEnum.Contact)">
+      {{ t('header.contact') | uppercase }}
+    </button>
+  </ng-container>
+</app-my-sidebar>
+
 <app-body></app-body>

@@ -15,6 +15,7 @@ import { ContactComponent } from "../components/contact/contact.component";
 import { FooterComponent } from "../components/footer/footer.component";
 import { HomeComponent } from "../components/home/home.component";
 import { MyDividerComponent } from "../components/my-divider/my-divider.component";
+import { MySidebarComponent } from "../components/my-sidebar/my-sidebar.component";
 import { PortfolioComponent } from "../components/portfolio/portfolio.component";
 import { TypeDeleteComponent } from "../components/type-delete/type-delete.component";
 
@@ -25,6 +26,7 @@ import { TypeDeleteComponent } from "../components/type-delete/type-delete.compo
     FooterComponent,
     HomeComponent,
     MyDividerComponent,
+    MySidebarComponent,
     PortfolioComponent,
     TypeDeleteComponent
   ],
@@ -46,6 +48,7 @@ import { TypeDeleteComponent } from "../components/type-delete/type-delete.compo
     FooterComponent,
     HomeComponent,
     MyDividerComponent,
+    MySidebarComponent,
     PortfolioComponent,
     TypeDeleteComponent
   ]
