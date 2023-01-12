@@ -26,6 +26,12 @@ section {
         left: 3rem;
         background: #ECEFFD;
         border-radius: 70% 50% 50% 70% / 50% 50% 70% 70%;
+
+        &.reverse {
+          top: unset;
+          bottom: 3rem;
+          left: 3rem;
+        }
       }
 
       &.circle-2 {
@@ -33,6 +39,12 @@ section {
         right: 3rem;
         background: #ECEFFD;
         border-radius: 80% 30% 70% 50% / 50%;
+
+        &.reverse {
+          bottom: unset;
+          top: 3rem;
+          right: 3rem;
+        }
       }
     }
   }
