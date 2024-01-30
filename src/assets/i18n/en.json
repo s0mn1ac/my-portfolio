@@ -28,6 +28,18 @@
     "subtitle": "Hi!",
     "phrases": {
       "p1": "Web developer"
+    },
+    "paragraphs": {
+      "p1": "I have more than ",
+      "p2": "4 years",
+      "p3": " of experience in ",
+      "p4": "Angular",
+      "p5": ", although I have also worked with technologies like ",
+      "p6": "Ionic",
+      "p7": " or ",
+      "p8": "Flutter",
+      "p9": " throughout my career.",
+      "p10": "Do you want to know more about me?"
     }
   },
 
@@ -35,8 +47,19 @@
     "title": "Let me introduce myself",
     "subtitle": "About me",
     "paragraphs": {
-      "p1": "I am an app developer, specialized in web and mobile devices. Throughout my career I have worked on projects for companies such as Atos, Talgo or Aena.",
-      "p2": "Software development, apart from my job, is my passion and that is why I never stop learning new technologies and tools to keep up with the latest news of this world."
+      "p1": "Software development, apart from my job, is my passion, and that's why I never stop learning new technologies and tools to stay up-to-date with the latest industry trends.",
+      "p2": "I am a methodical, hardworking, and responsible person who knows how to work in a team and is not afraid of new challenges.",
+      "p3": "My strong point, undoubtedly, is ",
+      "p4": "Angular",
+      "p5": ", as it is the framework to which I have dedicated the most time and with which I feel the most comfortable. I also have significant experience with libraries like ",
+      "p6": "NgRx",
+      "p7": " and ",
+      "p8": "RxJs",
+      "p9": ", as well as with SDKs like ",
+      "p10": "Flutter",
+      "p11": " or ",
+      "p12": "Ionic",
+      "p13": "."
     }
   },
 

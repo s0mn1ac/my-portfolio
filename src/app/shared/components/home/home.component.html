@@ -1,22 +1,33 @@
 <ng-container *transloco="let t">
 
   <div class="title fade-in-top animation-delay-03">
-    <h2> {{ t('home.title.t1') }} </h2>
-    <img src="assets/images/profile/profile.jpg" [alt]="t('imageAlts.profilePicture')" class="profile" />
+    <h2>{{ t('home.title.t1') }}</h2>
+    <h2>👋</h2>
+    <!-- <img src="assets/images/profile/profile.jpg" [alt]="t('imageAlts.profilePicture')" class="profile" /> -->
   </div>
 
-  <h2 class="fade-in-top animation-delay-06"> {{ t('home.title.t2') }} </h2>
+  <h2 class="fade-in-top animation-delay-06">{{ t('home.title.t2') }}</h2>
 
   <app-type-delete #typeDeleteComponent [wordArray]="wordArray"> </app-type-delete>
 
+  <p>
+    <span>{{ t('home.paragraphs.p1') }}</span>
+    <span class="bold-text">{{ t('home.paragraphs.p2') }}</span>
+    <span>{{ t('home.paragraphs.p3') }}</span>
+    <span class="bold-text">{{ t('home.paragraphs.p4') }}</span>
+    <span>{{ t('home.paragraphs.p5') }}</span>
+    <span class="bold-text">{{ t('home.paragraphs.p6') }}</span>
+    <span>{{ t('home.paragraphs.p7') }}</span>
+    <span class="bold-text">{{ t('home.paragraphs.p8') }}</span>
+    <span>{{ t('home.paragraphs.p9') }}</span>
+  </p>
+
+  <p>{{ t('home.paragraphs.p10') }}</p>
+
   <div class="main-image-container fade-in-bottom animation-delay-09">
     <img src="assets/images/sections/home/developer.png" [alt]="t('imageAlts.developerAtWork')" class="main-image pulsate-fwd animation-delay-2" />
-    <div class="circle circle-1"> </div>
-    <div class="circle circle-2"> </div>
-  </div>
-
-  <div class="scroll-arrow-container">
-    <img src="../../../../assets/images/icons/arrow-down.svg" (click)="onClickNavigateToAbout()">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
   </div>
 
 </ng-container>

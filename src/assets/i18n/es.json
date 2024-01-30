@@ -28,6 +28,18 @@
     "subtitle": "¡Hola!",
     "phrases": {
       "p1": "Desarrollador web"
+    },
+    "paragraphs": {
+      "p1": "Cuento con más de ",
+      "p2": "4 años",
+      "p3": " de experiencia en ",
+      "p4": "Angular",
+      "p5": ", aunque también he trabajado con tecnologías como ",
+      "p6": "Ionic",
+      "p7": " o ",
+      "p8": "Flutter",
+      "p9": " a lo largo de mi carrera.",
+      "p10": "¿Quieres saber más sobre mí?"
     }
   },
 
@@ -35,8 +47,19 @@
     "title": "Deja que me presente",
     "subtitle": "Sobre mí",
     "paragraphs": {
-      "p1": "Soy desarrollador de aplicaciones, especializado en web y dispositivos móviles. A lo largo de mi carrera he trabajado en proyectos de empresas como Atos, Talgo o Aena.",
-      "p2": "El desarrollo de software, aparte de mi trabajo, es mi pasión y por eso nunca paro de aprender nuevas tecnologías y herramientas para mantenerme al día con las últimas novedades del sector."
+      "p1": "El desarrollo de software, aparte de mi trabajo, es mi pasión y por eso nunca paro de aprender nuevas tecnologías y herramientas para mantenerme al día con las últimas novedades del sector.",
+      "p2": "Soy una persona metódica, trabajadora y responsable, que sabe cómo trabajar en equipo y que no tiene miedo a nuevos retos.",
+      "p3": "Mi punto fuerte, sin lugar a dudas, es ",
+      "p4": "Angular",
+      "p5": ", ya que es el Framework al que más tiempo he dedicado y con el que más he trabajado y más cómodo me siento. También tengo bastante experiencia con librerías como ",
+      "p6": "NgRx",
+      "p7": " y ",
+      "p8": "RxJs",
+      "p9": ", así como con SDKs como ",
+      "p10": "Flutter",
+      "p11": " o ",
+      "p12": "Ionic",
+      "p13": "."
     }
   },
 
