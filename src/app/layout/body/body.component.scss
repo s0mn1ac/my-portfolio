@@ -18,6 +18,10 @@ div.body-layout {
   section.body-layout__section {
     text-align: center;
 
+    &#home {
+      height: 100dvh;
+    }
+
     &#footer {
       margin: 4rem 0 1rem 0;
     }

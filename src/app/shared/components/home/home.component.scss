@@ -1,5 +1,9 @@
 @import 'src/styles/mixins.scss';
 
+:host {
+  // position: relative;
+}
+
 div.title {
   display: flex;
   flex-direction: row;
@@ -22,6 +26,25 @@ div.title {
       height: 40px;
       width: 40px;
       margin-left: 1rem;
+    }
+  }
+}
+
+div.scroll-arrow-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+
+  img {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.25);
     }
   }
 }
