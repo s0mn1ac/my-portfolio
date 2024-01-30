@@ -2,12 +2,48 @@
 
   <h4 class="subtitle"> {{ t('portfolio.subtitle') }} </h4>
   <h2> {{ t('portfolio.title') }} </h2>
-  <p> {{ t('portfolio.paragraphs.p1') }} </p>
 
-  <div class="main-image-container fade-in-bottom animation-delay-09">
-    <img src="assets/images/sections/portfolio/brainstorming.png" [alt]="t('imageAlts.brainstorming')" class="main-image pulsate-fwd animation-delay-2" />
-    <div class="circle circle-1"> </div>
-    <div class="circle circle-2"> </div>
+  <div class="project-container">
+
+    <div class="project-container__header">
+
+      <div class="header__logo">
+        <img src="../../../../assets/images/projects/gamery/gamery-logo.webp">
+      </div>
+
+      <div class="header__title-and-description">
+        <h3>{{ t('portfolio.paragraphs.p1') }}</h3>
+        <p>{{ t('portfolio.paragraphs.p2') }}</p>
+      </div>
+
+    </div>
+
+    <div class="project-container__images">
+
+      <div class="images__image-container">
+        <img src="../../../../assets/images/projects/gamery/1.webp">
+      </div>
+
+      <div class="images__image-container">
+        <img src="../../../../assets/images/projects/gamery/2.webp">
+      </div>
+
+      <div class="images__image-container">
+        <img src="../../../../assets/images/projects/gamery/3.webp">
+      </div>
+
+    </div>
+
+    <div class="project-container__download">
+
+      <div class="download__image-container">
+        <a href="https://play.google.com/store/apps/details?id=dev.juanmigonzalez.gamery&pcampaignid=web_share" target="_blank">
+          <img src="../../../../assets/images/misc/google-play.png">
+        </a>
+      </div>
+
+    </div>
+
   </div>
 
 </ng-container>
