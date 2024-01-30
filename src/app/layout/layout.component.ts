@@ -92,8 +92,13 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
         this.dispatchNavigateTo(fragment as SectionEnum ?? SectionEnum.Home));
   }
 
-  public onClickNavigateTo(section: SectionEnum): void {
+  public onClickNavigateTo(section: SectionEnum, mySidebarComponent?: MySidebarComponent): void {
+
     this.dispatchNavigateTo(section);
+
+    if (mySidebarComponent !== null && mySidebarComponent !== undefined) {
+      mySidebarComponent.toggle(false);
+    }
   }
 
   public onClickChangeTheme(theme: ThemeEnum): void {

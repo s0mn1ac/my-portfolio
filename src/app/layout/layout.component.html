@@ -12,28 +12,28 @@
       [style.font-size]="'20px'"
       class="my-button-text primary selectable"
       [ngClass]="{ 'selected-text-only': navigationSection === sectionEnum.Home }"
-      (click)="header.onClickNavigateTo(sectionEnum.Home)">
+      (click)="onClickNavigateTo(sectionEnum.Home, mySidebarComponent)">
       {{ t('header.home') | uppercase }}
     </button>
     <button
       [style.font-size]="'20px'"
       class="my-button-text primary selectable"
       [ngClass]="{ 'selected-text-only': navigationSection === sectionEnum.About }"
-      (click)="header.onClickNavigateTo(sectionEnum.About)">
+      (click)="onClickNavigateTo(sectionEnum.About, mySidebarComponent)">
       {{ t('header.about') | uppercase }}
     </button>
     <button
       [style.font-size]="'20px'"
       class="my-button-text primary selectable"
       [ngClass]="{ 'selected-text-only': navigationSection === sectionEnum.Portfolio }"
-      (click)="header.onClickNavigateTo(sectionEnum.Portfolio)">
+      (click)="onClickNavigateTo(sectionEnum.Portfolio, mySidebarComponent)">
       {{ t('header.portfolio') | uppercase }}
     </button>
     <button
       [style.font-size]="'20px'"
       class="my-button-text primary selectable"
       [ngClass]="{ 'selected-text-only': navigationSection === sectionEnum.Contact }"
-      (click)="header.onClickNavigateTo(sectionEnum.Contact)">
+      (click)="onClickNavigateTo(sectionEnum.Contact, mySidebarComponent)">
       {{ t('header.contact') | uppercase }}
     </button>
   </ng-container>
