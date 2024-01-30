@@ -62,9 +62,10 @@ div.header-layout {
         align-items: center;
         width: 35px;
         height: 35px;
-        background: var(--background-color-reverse);
-        color: var(--text-color-reverse);
-        border-radius: 35px;
+
+        img {
+          width: 100%;
+        }
       }
     }
   }

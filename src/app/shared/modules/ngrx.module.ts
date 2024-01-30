@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { LanguageModule } from 'src/app/core/state/language/language.module';
 import { NavigationModule } from "../../core/state/navigation/navigation.module";
 import { ThemeModule } from "../../core/state/theme/theme.module";
 
@@ -21,6 +22,7 @@ import { environment } from "../../../environments/environment";
       logOnly: environment.production,
       maxAge: 25
     }),
+    LanguageModule,
     NavigationModule,
     ThemeModule
   ]

@@ -22,6 +22,7 @@ import { MySidebarComponent } from "../shared/components/my-sidebar/my-sidebar.c
 import { LanguageEnum } from "../shared/enums/language.enum";
 import { SectionEnum } from "../shared/enums/section.enum";
 import { ThemeEnum } from "../shared/enums/theme.enum";
+import { changeLanguage } from '../core/state/language/language.actions';
 
 @Component({
   selector: 'app-layout',
@@ -100,7 +101,7 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public onClickChangeLanguage(language: LanguageEnum): void {
-    this.translocoService.setActiveLang(language);
+    this.dispatchChangeLanguage(language);
   }
 
   public onToggleSidebar(value: boolean): void {
@@ -116,6 +117,10 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private dispatchChangeTheme(theme: ThemeEnum): void {
     this.store.dispatch(changeTheme({ theme }));
+  }
+
+  private dispatchChangeLanguage(language: LanguageEnum): void {
+    this.store.dispatch(changeLanguage({ language }));
   }
 
 }
