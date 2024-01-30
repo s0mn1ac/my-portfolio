@@ -1,5 +1,5 @@
 /* Angular */
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 
 /* RxJs */
 import { Observable, Subject, takeUntil } from "rxjs";

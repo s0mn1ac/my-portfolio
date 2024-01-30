@@ -62,17 +62,10 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private initStoreSubscriptions(): void {
+
     this.navigationSection$
       .pipe(takeUntil(this.destroy$))
-      .subscribe((navigationSection: SectionEnum | null) =>
-        this.onChangeNavigationSection(navigationSection));
-  }
-
-  private initUrlFragmentSubscription(): void {
-    this.activatedRoute.fragment
-      .pipe(first())
-      .subscribe((fragment: string | null) =>
-        this.dispatchNavigateTo(fragment as SectionEnum ?? SectionEnum.Home));
+      .subscribe((navigationSection: SectionEnum | null) => this.onChangeNavigationSection(navigationSection));
   }
 
   private async onChangeNavigationSection(navigationSection: SectionEnum | null): Promise<void> {
@@ -87,7 +80,15 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
       .finally(() => {
         this.timeout = 0;
         this.navigationSection = navigationSection;
+        this.dispatchNavigateTo(null);
       });
+  }
+
+  private initUrlFragmentSubscription(): void {
+    this.activatedRoute.fragment
+      .pipe(first())
+      .subscribe((fragment: string | null) =>
+        this.dispatchNavigateTo(fragment as SectionEnum ?? SectionEnum.Home));
   }
 
   public onClickNavigateTo(section: SectionEnum): void {
@@ -109,7 +110,7 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
   /* ----- Store Dispatchers ------------------------------------------------------------------------------------------------------------ */
 
-  private dispatchNavigateTo(section: SectionEnum): void {
+  private dispatchNavigateTo(section: SectionEnum | null): void {
     this.store.dispatch(navigateTo({ section }));
   }
 

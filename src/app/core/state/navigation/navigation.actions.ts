@@ -10,5 +10,5 @@ export enum NavigationTypes {
 
 export const navigateTo = createAction(
   NavigationTypes.NavigateTo,
-  props<{ section: SectionEnum }>()
+  props<{ section: SectionEnum | null }>()
 );
