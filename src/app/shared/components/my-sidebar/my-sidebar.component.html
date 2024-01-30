@@ -18,6 +18,18 @@
       <ng-content> </ng-content>
     </div>
 
+    <div class="my-sidebar__footer">
+
+      <div class="language en" (click)="onClickChangeLanguage(languageEnum.En)">
+        <img src="../../../../assets/images/flags/en.png">
+      </div>
+
+      <div class="language es" (click)="onClickChangeLanguage(languageEnum.Es)">
+        <img src="../../../../assets/images/flags/es.png">
+      </div>
+
+    </div>
+
   </div>
 
   <div class="my-sidebar-overlay" [ngClass]="{ 'visible': isVisible }" (click)="toggle(false)"> </div>
