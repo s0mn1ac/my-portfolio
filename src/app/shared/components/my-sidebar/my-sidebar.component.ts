@@ -1,9 +1,8 @@
 /* Angular */
 import { Component, Input } from '@angular/core';
 
-/* NgRx */
-import { Store } from '@ngrx/store';
-import { changeLanguage } from 'src/app/core/state/language/language.actions';
+/* Services */
+import { DispatcherService } from '../../services/dispatcher.service';
 
 /* Enums */
 import { LanguageEnum } from '../../enums/language.enum';
@@ -23,8 +22,11 @@ export class MySidebarComponent {
   private _isVisible: boolean = false;
 
   constructor(
-    private readonly store: Store
+    private readonly dispatcherService: DispatcherService
   ) { }
+
+
+  /* ----- Getters & Setters ------------------------------------------------------------------------------------------------------------ */
 
   get isVisible(): boolean {
     return this._isVisible;
@@ -34,11 +36,22 @@ export class MySidebarComponent {
     this._isVisible = isVisible;
   }
 
+
+  /* ----- On click methods ------------------------------------------------------------------------------------------------------------- */
+
+  /**
+   * This method is in charge of call a dispatcher in charge of update the current language value
+   * @param language
+   */
   public onClickChangeLanguage(language: LanguageEnum): void {
-    this.store.dispatch(changeLanguage({ language }));
+    this.dispatcherService.changeLanguageLoad(language);
   }
 
-  public toggle(value: boolean): void {
+  /**
+   * This method is in charge of close the sidebar
+   * @param value
+   */
+  public onClickToggle(value: boolean): void {
     this.isVisible = value;
   }
 

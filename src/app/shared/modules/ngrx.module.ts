@@ -9,17 +9,13 @@ import { LanguageModule } from 'src/app/core/state/language/language.module';
 import { NavigationModule } from "../../core/state/navigation/navigation.module";
 import { ThemeModule } from "../../core/state/theme/theme.module";
 
-/* Environment */
-import { environment } from "../../../environments/environment";
-
 @NgModule({
   declarations: [],
   imports: [
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({ }),
     EffectsModule.forRoot(),
     StoreDevtoolsModule.instrument({
       name: 'My Portfolio Store',
-      logOnly: environment.production,
       maxAge: 25
     }),
     LanguageModule,

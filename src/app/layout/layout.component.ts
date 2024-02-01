@@ -9,11 +9,9 @@ import { first, Observable, Subject, takeUntil } from "rxjs";
 /* NgRx */
 import { Store } from "@ngrx/store";
 import { selectNavigationSection } from "../core/state/navigation/navigation.selectors";
-import { changeTheme } from "../core/state/theme/theme.actions";
-import { navigateTo } from "../core/state/navigation/navigation.actions";
 
 /* Services */
-import { TranslocoService } from "@ngneat/transloco";
+import { DispatcherService } from '../shared/services/dispatcher.service';
 
 /* Components */
 import { MySidebarComponent } from "../shared/components/my-sidebar/my-sidebar.component";
@@ -22,7 +20,6 @@ import { MySidebarComponent } from "../shared/components/my-sidebar/my-sidebar.c
 import { LanguageEnum } from "../shared/enums/language.enum";
 import { SectionEnum } from "../shared/enums/section.enum";
 import { ThemeEnum } from "../shared/enums/theme.enum";
-import { changeLanguage } from '../core/state/language/language.actions';
 
 @Component({
   selector: 'app-layout',
@@ -42,12 +39,15 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   private timeout: number = 100;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
-    private store: Store,
-    private viewportScroller: ViewportScroller,
-    private translocoService: TranslocoService
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly dispatcherService: DispatcherService,
+    private readonly router: Router,
+    private readonly store: Store,
+    private readonly viewportScroller: ViewportScroller
   ) { }
+
+
+  /* ----- Life cycle methods ----------------------------------------------------------------------------------------------------------- */
 
   ngOnInit(): void {
     this.initStoreSubscriptions();
@@ -62,6 +62,13 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     this.destroy$.unsubscribe();
   }
 
+
+  /* ----- Store related Methods -------------------------------------------------------------------------------------------------------- */
+
+  /**
+   * This method is in charge of initialize and manage the store subscriptions
+   * @private
+   */
   private initStoreSubscriptions(): void {
 
     this.navigationSection$
@@ -69,6 +76,12 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
       .subscribe((navigationSection: SectionEnum | null) => this.onChangeNavigationSection(navigationSection));
   }
 
+  /**
+   * This method is in charge of process the navigation variable each time it's being modified in the store and
+   * navigate to the associated fragment into the router
+   * @param navigationSection
+   * @private
+   */
   private async onChangeNavigationSection(navigationSection: SectionEnum | null): Promise<void> {
 
     if (navigationSection === null) {
@@ -81,51 +94,60 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
       .finally(() => {
         this.timeout = 0;
         this.navigationSection = navigationSection;
-        this.dispatchNavigateTo(null);
+        this.dispatcherService.navigateTo(null);
       });
   }
 
+  /**
+   * This method is in charge of initialize and manage the store url fragments subscription
+   * @private
+   */
   private initUrlFragmentSubscription(): void {
+
     this.activatedRoute.fragment
       .pipe(first())
-      .subscribe((fragment: string | null) =>
-        this.dispatchNavigateTo(fragment as SectionEnum ?? SectionEnum.Home));
+      .subscribe((fragment: string | null) => this.dispatcherService.navigateTo(fragment as SectionEnum ?? SectionEnum.Home));
   }
 
+
+  /* ----- On click methods ------------------------------------------------------------------------------------------------------------- */
+
+  /**
+   * This method is in charge of call a dispatcher in charge of navigate to a new fragment of the url
+   * @param section
+   * @param mySidebarComponent
+   */
   public onClickNavigateTo(section: SectionEnum, mySidebarComponent?: MySidebarComponent): void {
 
-    this.dispatchNavigateTo(section);
+    this.dispatcherService.navigateTo(section);
 
     if (mySidebarComponent !== null && mySidebarComponent !== undefined) {
-      mySidebarComponent.toggle(false);
+      mySidebarComponent.onClickToggle(false);
     }
   }
 
+  /**
+   * This method is in charge of call a dispatcher in charge of update the current theme value
+   * @param theme
+   */
   public onClickChangeTheme(theme: ThemeEnum): void {
-    this.dispatchChangeTheme(theme);
+    this.dispatcherService.changeThemeLoad(theme);
   }
 
+  /**
+   * This method is in charge of call a dispatcher in charge of update the current language value
+   * @param language
+   */
   public onClickChangeLanguage(language: LanguageEnum): void {
-    this.dispatchChangeLanguage(language);
+    this.dispatcherService.changeLanguageLoad(language);
   }
 
+  /**
+   * This method is in charge of toggle the sidebar
+   * @param value
+   */
   public onToggleSidebar(value: boolean): void {
-    this.mySidebarComponent.toggle(value);
-  }
-
-
-  /* ----- Store Dispatchers ------------------------------------------------------------------------------------------------------------ */
-
-  private dispatchNavigateTo(section: SectionEnum | null): void {
-    this.store.dispatch(navigateTo({ section }));
-  }
-
-  private dispatchChangeTheme(theme: ThemeEnum): void {
-    this.store.dispatch(changeTheme({ theme }));
-  }
-
-  private dispatchChangeLanguage(language: LanguageEnum): void {
-    this.store.dispatch(changeLanguage({ language }));
+    this.mySidebarComponent.onClickToggle(value);
   }
 
 }

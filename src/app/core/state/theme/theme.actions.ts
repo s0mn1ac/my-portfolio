@@ -2,13 +2,28 @@
 import { createAction, props } from '@ngrx/store';
 
 /* Enums */
-import { ThemeEnum } from "../../../shared/enums/theme.enum";
+import { ThemeEnum } from 'src/app/shared/enums/theme.enum';
 
-export enum ThemeTypes {
-  ChangeTheme = '[Theme] Change Theme'
+export enum ThemeStateEnum {
+  ChangeThemeLoad = '[Theme] [Load] Change Theme',
+  ChangeThemeSuccess = '[Theme] [Success] Change Theme',
+  ChangeThemeError = '[Theme] [Error] Change Theme',
 }
 
-export const changeTheme = createAction(
-  ThemeTypes.ChangeTheme,
+
+/* ----- Change Theme ------------------------------------------------------------------------------------------------------------------- */
+
+export const changeThemeLoad = createAction(
+  ThemeStateEnum.ChangeThemeLoad,
   props<{ theme: ThemeEnum }>()
+);
+
+export const changeThemeSuccess = createAction(
+  ThemeStateEnum.ChangeThemeSuccess,
+  props<{ theme: ThemeEnum }>()
+);
+
+export const changeThemeError = createAction(
+  ThemeStateEnum.ChangeThemeError,
+  props<{ error: Error }>()
 );

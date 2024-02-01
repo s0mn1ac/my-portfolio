@@ -1,10 +1,21 @@
 /* NgRx */
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { IThemeState, themeFeatureKey } from "./theme.reducers";
+import { createFeatureSelector, createSelector, MemoizedSelector } from '@ngrx/store';
+import { ThemeStateInterface, themeFeatureName } from './theme.reducers';
 
-export const selectThemeState = createFeatureSelector<IThemeState>(themeFeatureKey);
+/* Enums */
+import { ThemeEnum } from 'src/app/shared/enums/theme.enum';
 
-export const selectTheme = createSelector(
+
+/* ----- State -------------------------------------------------------------------------------------------------------------------------- */
+
+export const selectThemeState: MemoizedSelector<object, ThemeStateInterface> = createFeatureSelector<ThemeStateInterface>(
+  themeFeatureName
+);
+
+
+/* ----- Theme -------------------------------------------------------------------------------------------------------------------------- */
+
+export const selectTheme: MemoizedSelector<object, ThemeEnum> = createSelector(
   selectThemeState,
-  (state: IThemeState) => state.theme
+  (state: ThemeStateInterface): ThemeEnum => state.theme
 );

@@ -7,7 +7,7 @@
       <div class="close-button">
         <button
           class="my-button-icon-only primary"
-          (click)="toggle(false)">
+          (click)="onClickToggle(false)">
           <em class="fas fa-times"> </em>
         </button>
       </div>
@@ -32,6 +32,6 @@
 
   </div>
 
-  <div class="my-sidebar-overlay" [ngClass]="{ 'visible': isVisible }" (click)="toggle(false)"> </div>
+  <div class="my-sidebar-overlay" [ngClass]="{ 'visible': isVisible }" (click)="onClickToggle(false)"> </div>
 
 </ng-container>

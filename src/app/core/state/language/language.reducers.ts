@@ -1,24 +1,35 @@
 /* NgRx */
-import { Action, ActionReducer, createReducer, on } from "@ngrx/store";
-import { changeLanguage } from "./language.actions";
+import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
+import { changeLanguageError, changeLanguageLoad, changeLanguageSuccess } from './language.actions';
 
 /* Enums */
-import { LanguageEnum } from "../../../shared/enums/language.enum";
+import { LanguageEnum } from 'src/app/shared/enums/language.enum';
 
-export interface ILanguageState {
-  language: LanguageEnum |null
+export interface LanguageStateInterface {
+  language: LanguageEnum;
+  loading: boolean;
 }
 
-export const languageFeatureKey = 'language';
+export const languageFeatureName: string = 'language';
 
-export const initialState: ILanguageState = {
-  language: null
+export const initialState: LanguageStateInterface = {
+  language: LanguageEnum.Es,
+  loading: true
 };
 
-export const languageReducer: ActionReducer<ILanguageState, Action> = createReducer(
+export const languageReducer: ActionReducer<LanguageStateInterface, Action> = createReducer(
   initialState,
-  on(changeLanguage, (state, { language }): ILanguageState => ({
+  on(changeLanguageLoad, (state): LanguageStateInterface => ({
     ...state,
-    language: language
+    loading: true
+  })),
+  on(changeLanguageSuccess, (state, { language }): LanguageStateInterface => ({
+    ...state,
+    language: language,
+    loading: false
+  })),
+  on(changeLanguageError, (state, { error }): LanguageStateInterface => ({
+    ...state,
+    loading: false
   }))
 );

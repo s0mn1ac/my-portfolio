@@ -1,10 +1,21 @@
 /* NgRx */
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { ILanguageState, languageFeatureKey } from "./language.reducers";
+import { createFeatureSelector, createSelector, MemoizedSelector } from '@ngrx/store';
+import { LanguageStateInterface, languageFeatureName } from './language.reducers';
 
-export const selectLanguageState = createFeatureSelector<ILanguageState>(languageFeatureKey);
+/* Enums */
+import { LanguageEnum } from 'src/app/shared/enums/language.enum';
 
-export const selectLanguage = createSelector(
+
+/* ----- State -------------------------------------------------------------------------------------------------------------------------- */
+
+export const selectLanguageState: MemoizedSelector<object, LanguageStateInterface> = createFeatureSelector<LanguageStateInterface>(
+  languageFeatureName
+);
+
+
+/* ----- Language ----------------------------------------------------------------------------------------------------------------------- */
+
+export const selectLanguage: MemoizedSelector<object, LanguageEnum> = createSelector(
   selectLanguageState,
-  (state: ILanguageState) => state.language
+  (state: LanguageStateInterface): LanguageEnum => state.language
 );
